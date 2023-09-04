@@ -1,6 +1,5 @@
 ---
 import '@fontsource-variable/rubik';
-import Navbar from '../components/Navbar.astro';
 interface Props {
   title: string;
 }
@@ -25,7 +24,7 @@ const { title } = Astro.props;
     <div
       class='relative hero h-screen bg-gradient-to-br from-[#08213f] to-[#547b92]'
     >
-      <Navbar />
+      <!-- <Navbar /> -->
       <slot name='hero-content' />
       <img class='w-full self-end' src='/assets/wave.png' alt="'blue wave" />
     </div>
