@@ -2,8 +2,8 @@
 import '@fontsource-variable/inter';
 import Layout from '../layouts/Layout.astro';
 // import Card from "../components/Card.astro";
-// import { Avatar } from "../components/avatar.jsx";
-// import AboutMe from "../assets/about_me.svg";
+import { Avatar } from '../components/avatar';
+import AboutMe from '../assets/about_me.svg';
 ---
 
 <Layout title='Jin Jin Heipler'>
@@ -24,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
         > to solve problems.
       </h2>
     </div>
-    <!-- <Avatar client:visible /> -->
+    <Avatar client:visible />
   </div>
   <main class='bg-[#1E293B] mt-8'>
     <article class='flex flex-row items-start justify-evenly pt-20'>
