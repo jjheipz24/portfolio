@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/inter';
+import Layout from '../../layouts/Layout.astro'
 import projects from '../../project-data'
 export function getStaticPaths() {
     // return [
@@ -16,4 +18,22 @@ export function getStaticPaths() {
 
 const { title, body, tech} = Astro.props
 ---
-<h2>Project: {title}</h2>
+<Layout title={title}>
+    <div
+    slot='hero-content'
+    class='hero-content items-center justify-center lg:flex-row w-full h-1/2'
+  >
+      <h1
+        class="font-['Inter_Variable'] font-medium text-white text-8xl flex-none w-auto"
+      >
+        {title}
+      </h1>
+  </div>
+  <main class='bg-[#1E293B] mt-8'>
+    <section class="flex flex-wrap justify-center gap-6">
+    {tech.map((item: string) => (
+       <span class="rounded-full border border-slate-300 bg-transparent text-slate-300 font-normal text-xl py-1 px-3">{item}</span>
+    ))}
+    </section>  
+  </main>
+</Layout>
