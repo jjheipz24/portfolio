@@ -1,0 +1,19 @@
+---
+import projects from '../../project-data'
+export function getStaticPaths() {
+    // return [
+    //     { params: { project: 'sprout' } },
+    //     { params: { project: 'g-rex' } },
+    //     { params: { project: 'hate-crimes' } },
+    // ]
+    return projects.map(({ title, body, slug, tech }) => {
+        return {
+            params: { slug },
+            props: { title, body, slug, tech }
+        }
+    })
+}
+
+const { title, body, tech} = Astro.props
+---
+<h2>Project: {title}</h2>
