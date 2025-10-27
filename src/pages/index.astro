@@ -4,6 +4,11 @@ import Layout from '../layouts/Layout.astro';
 import Card from "../components/Card.astro";
 import { Avatar } from '../components/avatar';
 import projects from '../project-data';
+
+const startingYear = 2021;
+const currentYear = new Date().getFullYear();
+const yearsOfExperience = currentYear - startingYear;
+
 ---
 
 <Layout title='Jin Jin Heipler'>
@@ -45,9 +50,9 @@ import projects from '../project-data';
       </svg>
       <section class='w-1/2'>
         <p class="text-[#E5E7EB] font-['Inter_Variable'] text-base mb-8">
-          With a Bachelor of Science in New Media Interactive Development from
-          the Rochester Institute of Technology and nearly 3 years of experience
-          as a front-end developer, I bring both technical knowledge and a
+          With over {yearsOfExperience} years of experience
+          as a front-end developer, and a Bachelor of Science in New Media Interactive Development from
+          the Rochester Institute of Technology, I bring both technical knowledge and a
           passion for problem-solving to every project. I love transforming
           ideas from simple wireframes and mock-ups into clean, accessible
           user-friendly interfaces.
@@ -59,7 +64,7 @@ import projects from '../project-data';
           product that is both functional and visually appealing.
         </p>
         <p class="text-[#E5E7EB] font-['Inter_Variable'] text-base mb-8">
-          Currently, I am a Front-End Developer at <a
+          Currently, I am a Front-End Engineer at <a
             href='https://linksquares.com/'
             aria-label='Link to LinkSquares company website'
             class='text-[#BB96EA] hover:underline'>LinkSquares</a
@@ -74,9 +79,14 @@ import projects from '../project-data';
             {
               [
                 {
+                  title: 'Software Engineer II',
+                  company: 'LinkSquares',
+                  date: 'January 2024 - Present',
+                },
+                {
                   title: 'Software Engineer I',
                   company: 'LinkSquares',
-                  date: 'May 2022 - Present',
+                  date: 'May 2022 - January 2024',
                 },
                 {
                   title: 'Junior Front-End Developer',
