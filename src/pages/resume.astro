@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title='Resume - Jin Jin Heipler'>
+  <div slot="hero-content" class="flex items-center justify-center">
+    <h1 class="text-white text-4xl font-bold">Resume</h1>
+  </div>
+  <main class='bg-[#1E293B] py-12 px-4'>
+    <div class="max-w-5xl mx-auto">
+      <div class="bg-white rounded-lg shadow-lg">
+        <iframe 
+          src="/JinJin_Heipler_Resume.pdf" 
+          class="w-full h-[85vh] border-0 rounded-lg"
+          title="Jin Jin Heipler Resume"
+        ></iframe>
+      </div>
+      <div class="mt-6 flex justify-center">
+        <a 
+          href="/JinJin_Heipler_Resume.pdf" 
+          download
+          class="px-6 py-3 bg-[#BB96EA] hover:bg-[#A46DEA] text-white rounded-lg font-semibold transition duration-300"
+        >
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </main>
+</Layout>
+

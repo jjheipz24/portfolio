@@ -32,7 +32,7 @@ const yearsOfExperience = currentYear - startingYear;
     <Avatar client:visible />
   </div>
   <main class='bg-[#1E293B] mt-8'>
-    <article class='flex flex-row items-start justify-evenly pt-20'>
+    <article id="about" class='scroll-mt-24 flex flex-row items-start justify-evenly pt-20'>
       <svg
         width='312'
         height='217'
@@ -116,7 +116,7 @@ const yearsOfExperience = currentYear - startingYear;
         </section>
       </section>
     </article>
-    <article class='flex flex-row items-start justify-evenly pt-20'>
+    <article id="projects" class='scroll-mt-24 flex flex-row items-start justify-evenly pt-20'>
       <section class='w-1/2 inline-grid grid-cols-2 gap-10'>
         {
           projects.map(({ title, body, slug, chips }) => (
