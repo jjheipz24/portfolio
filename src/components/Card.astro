@@ -13,11 +13,11 @@ const { body, slug, chips, title } = Astro.props;
 	<div class="card w-100 glass bg-cyan-400 hover:scale-105 transition duration-200">
 	<!-- <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="car!"/></figure> -->
 	<div class="card-body">
-	  <h2 class="card-title">{title}</h2>
-	  <p>{body}</p>
+	  <h2 class="card-title text-slate-800">{title}</h2>
+	  <p class="text-slate-700">{body}</p>
 	  <div class="card-actions justify-end">
 		{chips.map((chip) => (
-			<span class="badge badge-outline">{chip}</span>
+			<span class="badge badge-outline border-slate-700 text-slate-700">{chip}</span>
 		))}
 	  </div>
 	</div>
