@@ -6,16 +6,32 @@ import Layout from '../layouts/Layout.astro';
   <div slot="hero-content" class="flex items-center justify-center">
     <h1 class="text-white text-4xl font-bold">Resume</h1>
   </div>
-  <main class='bg-[#1E293B] py-12 px-4'>
+  <main class='bg-[#1E293B] py-6 sm:py-12 px-4'>
     <div class="max-w-5xl mx-auto">
-      <div class="bg-white rounded-lg shadow-lg">
+      <!-- Desktop PDF Viewer -->
+      <div class="hidden lg:block bg-white rounded-lg shadow-lg overflow-hidden">
         <iframe 
           src="/JinJin_Heipler_Resume.pdf" 
-          class="w-full h-[85vh] border-0 rounded-lg"
+          class="w-full h-[85vh] border-0"
           title="Jin Jin Heipler Resume"
         ></iframe>
       </div>
-      <div class="mt-6 flex justify-center">
+      <!-- Mobile PDF Link -->
+      <div class="lg:hidden bg-white rounded-lg shadow-lg p-8">
+        <p class="text-gray-700 text-center mb-6">
+          Tap the button below to view the PDF in your browser
+        </p>
+        <div class="flex justify-center">
+          <a 
+            href="/JinJin_Heipler_Resume.pdf" 
+            target="_blank"
+            class="px-6 py-3 bg-[#BB96EA] hover:bg-[#A46DEA] text-white rounded-lg font-semibold transition duration-300"
+          >
+            Open Resume PDF
+          </a>
+        </div>
+      </div>
+      <div class="mt-4 sm:mt-6 hidden lg:flex justify-center">
         <a 
           href="/JinJin_Heipler_Resume.pdf" 
           download
