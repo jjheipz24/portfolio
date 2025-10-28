@@ -1,0 +1,120 @@
+---
+interface Props {
+  images: string[];
+  id: string;
+}
+
+const { images, id } = Astro.props;
+const carouselId = id || 'default-carousel';
+---
+
+<div class="carousel-container relative w-full h-[350px] lg:h-[600px] rounded-lg overflow-hidden" id={carouselId}>
+  <div class="carousel-wrapper w-full h-full relative overflow-hidden">
+    {images.map((image, index) => (
+      <div
+        class={`carousel-slide absolute inset-0 transition-transform duration-500 ease-in-out ${
+          index === 0 ? 'translate-x-0' : 'translate-x-full'
+        }`}
+        data-slide={index}
+      >
+        <img 
+          src={image} 
+          alt={`Project image ${index + 1}`}
+          class="w-full h-full object-cover"
+        />
+      </div>
+    ))}
+    
+    {images.length > 1 && (
+      <>
+        <!-- Navigation buttons -->
+        <button
+          class="carousel-nav prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 border-none rounded-full p-2 text-[#BB96EA] hover:text-[#A46DEA] transition-all cursor-pointer z-10"
+          data-action="prev"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          class="carousel-nav next absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white/90 border-none rounded-full p-2 text-[#BB96EA] hover:text-[#A46DEA] transition-all cursor-pointer z-10"
+          data-action="next"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+        
+        <!-- Indicator dots -->
+        <div class="absolute flex justify-center w-full gap-2 bottom-4 z-10">
+          {images.map((_, index) => (
+            <button
+              class={`carousel-dot w-2 h-2 rounded-full transition-all cursor-pointer ${
+                index === 0 ? 'bg-white' : 'bg-white/50'
+              }`}
+              data-slide={index}
+            ></button>
+          ))}
+        </div>
+      </>
+    )}
+  </div>
+</div>
+
+<script define:vars={{ images, carouselId }}>
+  (function initCarousel() {
+    if (!images || images.length <= 1) return;
+    
+    const container = document.getElementById(carouselId);
+    if (!container) return;
+    
+    let currentSlide = 0;
+    const slides = container.querySelectorAll('.carousel-slide');
+    const dots = container.querySelectorAll('.carousel-dot');
+    const prevBtn = container.querySelector('[data-action="prev"]');
+    const nextBtn = container.querySelector('[data-action="next"]');
+    
+    function showSlide(index) {
+      currentSlide = ((index % slides.length) + slides.length) % slides.length;
+      
+      slides.forEach((slide, i) => {
+        const slideEl = slide;
+        if (i === currentSlide) {
+          slideEl.classList.remove('translate-x-full', '-translate-x-full');
+          slideEl.classList.add('translate-x-0');
+        } else if (i < currentSlide) {
+          slideEl.classList.remove('translate-x-0', 'translate-x-full');
+          slideEl.classList.add('-translate-x-full');
+        } else {
+          slideEl.classList.remove('translate-x-0', '-translate-x-full');
+          slideEl.classList.add('translate-x-full');
+        }
+      });
+      
+      dots.forEach((dot, i) => {
+        const dotEl = dot;
+        if (i === currentSlide) {
+          dotEl.classList.remove('bg-white/50');
+          dotEl.classList.add('bg-white');
+        } else {
+          dotEl.classList.remove('bg-white');
+          dotEl.classList.add('bg-white/50');
+        }
+      });
+    }
+    
+    if (prevBtn) prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => showSlide(index));
+    });
+  })();
+</script>
+
+<style>
+  .carousel-container {
+    scroll-snap-type: x mandatory;
+  }
+</style>
+
