@@ -15,6 +15,32 @@ import hateCrimesImg2 from './assets/hate-crimes/hate-crimes-2.png';
 import hateCrimesImg3 from './assets/hate-crimes/hate-crimes-3.png';
 import hateCrimesImg4 from './assets/hate-crimes/hate-crimes-4.png';
 
+import birdFluImg1 from './assets/bird-flu/bird-flu-1.png';
+import birdFluImg2 from './assets/bird-flu/bird-flu-2.png';
+import birdFluImg3 from './assets/bird-flu/bird-flu-3.png';
+
+import shmoodImg1 from './assets/shmood/shmood-1.png';
+import shmoodImg2 from './assets/shmood/shmood-2.png';
+import shmoodImg3 from './assets/shmood/shmood-3.png';
+import shmoodImg4 from './assets/shmood/shmood-4.png';
+
+import bookWatchImg1 from './assets/bookwatch/bookwatch-1.png';
+import bookWatchImg2 from './assets/bookwatch/bookwatch-2.png';
+
+import coinCounterImg1 from './assets/coin-counter/coin-counter-1.png';
+import coinCounterImg2 from './assets/coin-counter/coin-counter-2.png';
+import coinCounterImg3 from './assets/coin-counter/coin-counter-3.png';
+import coinCounterImg4 from './assets/coin-counter/coin-counter-4.png';
+import coinCounterImg5 from './assets/coin-counter/coin-counter-5.png';
+import coinCounterImg6 from './assets/coin-counter/coin-counter-6.png';
+
+import mediaMatcherImg1 from './assets/media-matcher/media-matcher-1.png';
+import mediaMatcherImg2 from './assets/media-matcher/media-matcher-2.png';
+import mediaMatcherImg3 from './assets/media-matcher/media-matcher-3.png';
+import mediaMatcherImg4 from './assets/media-matcher/media-matcher-4.png';
+import mediaMatcherImg5 from './assets/media-matcher/media-matcher-5.png';
+import mediaMatcherImg6 from './assets/media-matcher/media-matcher-6.png';
+
 const projects = [
   {
     title: 'Sprout',
@@ -43,8 +69,8 @@ const projects = [
     title: 'Grammasaurus-Rex',
     body: 'A digital tool to help students practice grammar skills.',
     slug: 'g-rex',
-    chips: ['Web Application', 'Vue.js', 'Grammarbot'],
-    tech: ['Vue.js', 'jQuery', 'typist.js', 'Grammarbot API'],
+    chips: ['Web Application', 'Vue', 'Grammarbot'],
+    tech: ['Vue', 'jQuery', 'typist.js', 'Grammarbot API'],
     summary: [
       "Grammasaurus-Rex (G-Rex for short) was a small project completed by myself and two others in 24 hours for RIT's annual BrickHack hackathon.",
       'We wanted to create an application intended for young students to quickly learn and practice their grammar skills. We drew inspiration from the grammar worksheets/books we had to do when we were in elementary school, so many of the grammar questions and problems to solve come directly from existing examples used in English classes.',
@@ -76,6 +102,74 @@ const projects = [
       hateCrimesImg4.src,
     ],
     link: 'https://jjheipz24.github.io/2018HateCrimes/',
+  },
+  {
+    title: 'Bird Flu',
+    body: 'An interactive data visualization of the Avian Influenza and its effects on chickens.',
+    slug: 'bird-flu',
+    chips: ['Data Visualization', 'D3.js', 'OpenRefine'],
+    summary: ['Details coming soon!'],
+    images: [birdFluImg1.src, birdFluImg2.src, birdFluImg3.src],
+    link: 'https://jjheipz24.github.io/BirdFlu/',
+  },
+  {
+    title: 'shmood',
+    body: 'A personalized mood board creation site that allows users to upload images to create their own mood boards.',
+    slug: 'shmood',
+    chips: ['Web Application', 'React', 'Node.js'],
+    tech: ['React', 'Bootstrap', 'Node.js', 'Express', 'MongoDB'],
+    summary: ['Details coming soon!'],
+    images: [shmoodImg1.src, shmoodImg2.src, shmoodImg3.src, shmoodImg4.src],
+  },
+  {
+    title: 'bookWatch',
+    body: 'An application that gives users movie recommendations based on books they search for.',
+    slug: 'bookwatch',
+    chips: ['Web Application', 'Vue', 'Firebase'],
+    tech: [
+      'Vue',
+      'Bootstrap',
+      'Firebase',
+      'OpenLibrary API',
+      'TasteDive API',
+      'OMDB API',
+    ],
+    summary: ['Details coming soon!'],
+    images: [bookWatchImg1.src, bookWatchImg2.src],
+  },
+  {
+    title: 'Coin Counter',
+    body: 'A web app geared towards students with special needs to assist with visualizing money and giving change.',
+    slug: 'coin-counter',
+    chips: ['Web Application', 'Three.js', 'jQuery'],
+    tech: ['HTML', 'CSS', 'Three.js', 'jQuery', 'Adobe Illustrator'],
+    summary: ['Details coming soon!'],
+    images: [
+      coinCounterImg1.src,
+      coinCounterImg2.src,
+      coinCounterImg3.src,
+      coinCounterImg4.src,
+      coinCounterImg5.src,
+      coinCounterImg6.src,
+    ],
+    link: 'https://jjheipz24.github.io/CoinCounter/',
+  },
+  {
+    title: 'Media Matcher',
+    body: 'An app that recommends music, movies, shows, podcasts, books, authors, and/or games that a user might enjoy based on their own interests.',
+    slug: 'media-matcher',
+    chips: ['Mobile Application', 'Flutter', 'Figma'],
+    tech: ['Flutter', 'Figma', 'TasteDive API'],
+    summary: ['Details coming soon!'],
+    images: [
+      mediaMatcherImg1.src,
+      mediaMatcherImg2.src,
+      mediaMatcherImg3.src,
+      mediaMatcherImg4.src,
+      mediaMatcherImg5.src,
+      mediaMatcherImg6.src,
+    ],
+    link: 'https://drive.google.com/file/d/1AvvOnMexHr6GFDoj778b4qsdddpmRgUQ/view',
   },
 ];
 
