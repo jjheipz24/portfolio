@@ -25,10 +25,13 @@ const currentYear = new Date().getFullYear();
   </head>
   <body class='min-h-screen bg-slate-800'>
     <div
-      class='relative hero h-screen from-[#08213f] to-[#547b92] bg-no-repeat bg-bottom bg-contain bg-[url("/assets/wave.png")]'
+      class='relative hero h-screen  from-[#08213f] to-[#547b92] bg-no-repeat bg-bottom bg-none lg:bg-[url("/assets/wave.png")] lg:bg-[length:100%_auto]'
     >
       <Navbar />
       <slot name='hero-content' />
+      <!-- Mobile: foreground wave overlaps avatar -->
+      <img class='absolute bottom-0 left-0 right-0 w-full lg:hidden pointer-events-none select-none z-20' src='/assets/wave.png' alt="'blue wave" />
+      <!-- Desktop: background wave handled via background-image on container -->
     </div>
     <slot />
     <!-- Contact & Footer Section -->
