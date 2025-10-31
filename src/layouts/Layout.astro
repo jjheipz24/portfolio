@@ -25,11 +25,10 @@ const currentYear = new Date().getFullYear();
   </head>
   <body class='min-h-screen bg-slate-800'>
     <div
-      class='relative hero h-screen bg-gradient-to-br from-[#08213f] to-[#547b92]'
+      class='relative hero h-screen from-[#08213f] to-[#547b92] bg-no-repeat bg-bottom bg-contain bg-[url("/assets/wave.png")]'
     >
       <Navbar />
       <slot name='hero-content' />
-      <img class='w-full self-end' src='/assets/wave.png' alt="'blue wave" />
     </div>
     <slot />
     <!-- Contact & Footer Section -->
